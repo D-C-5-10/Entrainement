@@ -1,6 +1,6 @@
 
 import Animaux.*;
-
+import Exception.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +13,10 @@ public class Secteur {
         this.animauxDansSecteur = new ArrayList<Animal>();
     }
     //Methodes
-    public void ajouterAnimal(Animal A){
+    public void ajouterAnimal(Animal A) throws AnimalDansMauvaisSecteurException{
+        if(A.getTypeAnim() != typeAnimauxDansSecteur){
+            throw new AnimalDansMauvaisSecteurException("Animal dans le mauvais secteur");
+        }
         this.animauxDansSecteur.add(A);
     }
     public int getNombreAnimaux(){

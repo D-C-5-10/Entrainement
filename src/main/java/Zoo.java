@@ -1,6 +1,6 @@
 import Animaux.Animal;
 import Animaux.TypeAnimal;
-
+import Exception.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,16 +13,20 @@ public class Zoo {
         this.secteurAnimaux = new ArrayList<Secteur>();
     }
     //Methodes
-    public void ajouterSecteur(TypeAnimal T){
+    public void ajouterSecteur (TypeAnimal T){
         secteurAnimaux.add(new Secteur(T));
     }
-    public void nouveauVisiteur(){
+    public void nouveauVisiteur() throws LimiteVisiteurException {
+        if (this.visiteurs==5){
+            throw new LimiteVisiteurException("limite visiteurs est atteint");
+        }
         visiteurs++;
+
     }
     public int getLimitVisiteurs(){
        return visiteurs;
     }
-    public void nouvelAnimal(Animal a) {
+    public void nouvelAnimal(Animal a) throws AnimalDansMauvaisSecteurException {
         getSecteurFromType(a.getTypeAnim()).ajouterAnimal(a);
     }
 

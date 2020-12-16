@@ -1,10 +1,10 @@
 import Animaux.Chat;
 import Animaux.TypeAnimal;
-
+import Exception.*;
 public class App {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws AnimalDansMauvaisSecteurException {
         Zoo zoo = new Zoo();
         zoo.ajouterSecteur(TypeAnimal.CHAT);
         zoo.ajouterSecteur(TypeAnimal.CHIEN);
