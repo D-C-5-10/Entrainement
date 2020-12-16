@@ -1,7 +1,26 @@
+import Animaux.Chat;
+import Animaux.TypeAnimal;
+
 public class App {
-    public Zoo zoo;
+
 
     public static void main(String[] args) {
-        
+        Zoo zoo = new Zoo();
+        zoo.ajouterSecteur(TypeAnimal.CHAT);
+        zoo.ajouterSecteur(TypeAnimal.CHIEN);
+        zoo.ajouterSecteur(TypeAnimal.CHAT);
+        zoo.ajouterSecteur(TypeAnimal.CHIEN);
+        zoo.ajouterSecteur(TypeAnimal.CHIEN);
+
+        zoo.nouvelAnimal(new Chat("Felix"));
+        zoo.nouvelAnimal(new Chat("Chaton"));
+        zoo.nouvelAnimal(new Chat("Malot"));
+        zoo.nouvelAnimal(new Chat("Griffe"));
+        zoo.nouvelAnimal(new Chat("LeChat"));
+        zoo.nouvelAnimal(new Chat("Truc"));
+
+        System.out.println(zoo.nombreAnimaux());
     }
-}
+
+    }
+
