@@ -6,7 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import Exception.LimiteVisiteurException;
+import Exception.*;
 public class ZooTest {
     static Zoo Z;
     @BeforeClass
@@ -30,4 +30,5 @@ public class ZooTest {
             Assert.assertEquals("limite visiteurs est atteint",e.getMessage());
         }
     }
+ 
 }
